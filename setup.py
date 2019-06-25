@@ -55,7 +55,10 @@ class BuildScripts(build_scripts):
         if plat.startswith('darwin'):
             os_ = 'mac'
             # Only 64 bit architecture is available for mac since version 2.23
-            architecture = 64 if float(chromedriver_version) >= 2.23 else 32
+            try:
+                architecture = 64 if float(chromedriver_version) >= 2.23 else 32
+            except ValueError:
+                architecture = 64
         elif plat.startswith('linux'):
             os_ = 'linux'
             architecture = platform.architecture()[0][:-3]

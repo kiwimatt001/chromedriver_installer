@@ -23,7 +23,7 @@ CHROMEDRIVER_URL_TEMPLATE = (
     '{architecture}.zip'
 )
 
-CHROMEDRIVER_VERSION_PATTERN = re.compile(r'^\d+\.\d+$')
+CHROMEDRIVER_VERSION_PATTERN = re.compile(r'^\d+\.\d+(.\d+\.\d+){0,1}$')
 CROMEDRIVER_LATEST_VERSION_PATTERN = re.compile(
     r'Latest-Release:-ChromeDriver-(\d+\.\d+)'
 )
